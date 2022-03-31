@@ -8,6 +8,7 @@ import { AuthorsService } from '../authors.service';
 })
 export class AuthorsComponent implements OnInit {
   authors;
+  isActive = false;
 
   constructor(service: AuthorsService) {
     this.authors = service.getAuthors();
