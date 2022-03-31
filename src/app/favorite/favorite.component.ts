@@ -11,11 +11,11 @@ import { faStarHalf } from '@fortawesome/free-solid-svg-icons';
 export class FavoriteComponent implements OnInit {
   faStar = faStar;
   faStarHalf = faStarHalf;
-  @Input() isFavorite = false;
+  @Input('isFavorite') isSelected = false;
   // isFavorite = false;
 
   onClick() {
-    this.isFavorite = !this.isFavorite;
+    this.isSelected = !this.isSelected;
   }
   ngOnInit(): void {}
 }
