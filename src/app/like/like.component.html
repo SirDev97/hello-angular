@@ -1,0 +1,8 @@
+<span (click)="onClick()">
+  <fa-icon
+    [icon]="heartIcon"
+    [class.highlighted]="isActive"
+    class="heart-icon"
+  ></fa-icon>
+  <ng-container>{{ likesCount }}</ng-container>
+</span>

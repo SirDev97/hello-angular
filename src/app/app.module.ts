@@ -13,6 +13,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TitleCasePipe } from './title-case.pipe';
 import { PanelComponent } from './panel/panel.component';
+import { LikeComponent } from './like/like.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { PanelComponent } from './panel/panel.component';
     FavoriteComponent,
     TitleCasePipe,
     PanelComponent,
+    LikeComponent,
   ],
   imports: [BrowserModule, FormsModule, FontAwesomeModule],
   providers: [CoursesService, AuthorsService],
