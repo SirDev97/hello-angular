@@ -17,7 +17,12 @@ export class FavoriteComponent implements OnInit {
 
   onClick() {
     this.isSelected = !this.isSelected;
-    this.change.emit();
+    this.change.emit({ newValue: this.isSelected });
   }
   ngOnInit(): void {}
+}
+
+// Best practice: declare the interface here and export it.
+export interface FavoriteChangedEventArgs {
+  newValue: boolean;
 }
