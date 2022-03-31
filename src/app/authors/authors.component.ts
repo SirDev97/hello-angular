@@ -6,12 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./authors.component.css'],
 })
 export class AuthorsComponent implements OnInit {
-  // onKeyUp($event: KeyboardEvent) {
-  //   if ($event.key === 'Enter') console.log('ENTER was pressed!');
+  // onKeyUp($event: Event) {
+  //   console.log(
+  //     'ENTER was pressed. Value is: ',
+  //     ($event.target as HTMLInputElement).value
+  //   );
   // }
 
-  onKeyUp() {
-    console.log('ENTER was pressed!');
+  onKeyUp(email: HTMLInputElement) {
+    console.log(email.value);
   }
 
   ngOnInit() {}
