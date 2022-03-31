@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStarHalf } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,7 +8,7 @@ import { faStarHalf } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./favorite.component.css'],
   // inputs: ['isFavorite'],
 })
-export class FavoriteComponent implements OnInit {
+export class FavoriteComponent {
   faStar = faStar;
   faStarHalf = faStarHalf;
   @Input('isFavorite') isSelected = false;
@@ -19,7 +19,6 @@ export class FavoriteComponent implements OnInit {
     this.isSelected = !this.isSelected;
     this.click.emit({ newValue: this.isSelected });
   }
-  ngOnInit(): void {}
 }
 
 // Best practice: declare the interface here and export it.
