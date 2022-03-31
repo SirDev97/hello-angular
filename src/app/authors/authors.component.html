@@ -2,4 +2,6 @@
 <ul>
   <li *ngFor="let author of authors">{{ author }}</li>
 </ul>
-<button [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button>
+<div (click)="onDivClick()">
+  <button (click)="onSave($event)">Save</button>
+</div>

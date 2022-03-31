@@ -10,6 +10,16 @@ export class AuthorsComponent implements OnInit {
   authors;
   isActive = false;
 
+  onDivClick() {
+    console.log('div was clicked! This is event bubbling');
+  }
+
+  onSave($event: Event) {
+    $event.stopPropagation(); // This stops event bubbling!
+
+    console.log('button was clicked!', $event);
+  }
+
   constructor(service: AuthorsService) {
     this.authors = service.getAuthors();
   }
