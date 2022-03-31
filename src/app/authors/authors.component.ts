@@ -13,8 +13,10 @@ export class AuthorsComponent implements OnInit {
   //   );
   // }
 
-  onKeyUp(email: HTMLInputElement) {
-    console.log(email.value);
+  email = 'angular@mail.com';
+
+  onKeyUp() {
+    console.log(this.email);
   }
 
   ngOnInit() {}
