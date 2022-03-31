@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorsService } from '../authors.service';
 
 @Component({
   selector: 'authors',
@@ -7,22 +6,13 @@ import { AuthorsService } from '../authors.service';
   styleUrls: ['./authors.component.css'],
 })
 export class AuthorsComponent implements OnInit {
-  authors;
-  isActive = false;
+  // onKeyUp($event: KeyboardEvent) {
+  //   if ($event.key === 'Enter') console.log('ENTER was pressed!');
+  // }
 
-  onDivClick() {
-    console.log('div was clicked! This is event bubbling');
+  onKeyUp() {
+    console.log('ENTER was pressed!');
   }
 
-  onSave($event: Event) {
-    $event.stopPropagation(); // This stops event bubbling!
-
-    console.log('button was clicked!', $event);
-  }
-
-  constructor(service: AuthorsService) {
-    this.authors = service.getAuthors();
-  }
-
-  ngOnInit(): void {}
+  ngOnInit() {}
 }
