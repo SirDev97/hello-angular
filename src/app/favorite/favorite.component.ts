@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStarHalf } from '@fortawesome/free-solid-svg-icons';
 
@@ -6,14 +6,16 @@ import { faStarHalf } from '@fortawesome/free-solid-svg-icons';
   selector: 'favorite',
   templateUrl: './favorite.component.html',
   styleUrls: ['./favorite.component.css'],
+  // inputs: ['isFavorite'],
 })
 export class FavoriteComponent implements OnInit {
   faStar = faStar;
   faStarHalf = faStarHalf;
-  isActive = false;
+  @Input() isFavorite = false;
+  // isFavorite = false;
 
   onClick() {
-    this.isActive = !this.isActive;
+    this.isFavorite = !this.isFavorite;
   }
   ngOnInit(): void {}
 }
