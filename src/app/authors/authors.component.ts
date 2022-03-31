@@ -6,18 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./authors.component.css'],
 })
 export class AuthorsComponent implements OnInit {
-  // onKeyUp($event: Event) {
-  //   console.log(
-  //     'ENTER was pressed. Value is: ',
-  //     ($event.target as HTMLInputElement).value
-  //   );
-  // }
-
-  email = 'angular@mail.com';
-
-  onKeyUp() {
-    console.log(this.email);
-  }
-
+  text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste non deserunt minima assumenda explicabo hic provident labore eligendi nesciunt. Itaque harum in iusto non provident officia rerum odit nemo cum impedit tenetur sapiente, nobis totam tempora exercitationem pariatur facere eveniet quas repellendus perspiciatis dolorem, voluptatem vitae nostrum. At, ipsam nulla.`;
   ngOnInit() {}
 }
