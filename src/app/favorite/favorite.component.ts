@@ -12,12 +12,12 @@ export class FavoriteComponent implements OnInit {
   faStar = faStar;
   faStarHalf = faStarHalf;
   @Input('isFavorite') isSelected = false;
-  @Output() change = new EventEmitter();
+  @Output('change') click = new EventEmitter();
   // isFavorite = false;
 
   onClick() {
     this.isSelected = !this.isSelected;
-    this.change.emit({ newValue: this.isSelected });
+    this.click.emit({ newValue: this.isSelected });
   }
   ngOnInit(): void {}
 }
