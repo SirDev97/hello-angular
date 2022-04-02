@@ -14,6 +14,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TitleCasePipe } from './title-case.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
+import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LikeComponent } from './like/like.component';
     TitleCasePipe,
     PanelComponent,
     LikeComponent,
+    ZippyComponent,
   ],
   imports: [BrowserModule, FormsModule, FontAwesomeModule],
   providers: [CoursesService, AuthorsService],

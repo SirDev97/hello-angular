@@ -1,0 +1,13 @@
+<div class="zippy">
+  <div
+    class="zippy-heading d-flex justify-content-between"
+    [class.expanded]="isExpanded"
+    (click)="toggle()"
+  >
+    {{ title }}
+    <fa-icon [icon]="isExpanded ? chevronUp : chevronDown"></fa-icon>
+  </div>
+  <div class="zippy-body" *ngIf="isExpanded">
+    <ng-content></ng-content>
+  </div>
+</div>
