@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthorsService } from '../authors.service';
 import { UsernameValidators } from './username.validators';
 
 @Component({
@@ -20,6 +21,12 @@ export class SignupFormComponent {
     ),
     password: new FormControl('', Validators.required),
   });
+
+  login() {
+    this.form.setErrors({
+      invalidLogin: true,
+    });
+  }
 
   get username() {
     return this.form.get('username');
