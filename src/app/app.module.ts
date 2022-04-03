@@ -15,6 +15,7 @@ import { TitleCasePipe } from './title-case.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { ZippyComponent } from './zippy/zippy.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ZippyComponent } from './zippy/zippy.component';
     PanelComponent,
     LikeComponent,
     ZippyComponent,
+    ContactFormComponent,
   ],
   imports: [BrowserModule, FormsModule, FontAwesomeModule],
   providers: [CoursesService, AuthorsService],
