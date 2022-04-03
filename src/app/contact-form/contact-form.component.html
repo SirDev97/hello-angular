@@ -45,6 +45,7 @@
       class="form-control"
     ></textarea>
   </div>
+
   <div class="checkbox">
     <label>
       <input type="checkbox" ngModel name="isSubscribed" /> Subscribe to mailing
@@ -64,6 +65,13 @@
         {{ method.name }}
       </option>
     </select>
+  </div>
+
+  <div *ngFor="let method of contactMethods" class="radio">
+    <label>
+      <input ngModel type="radio" name="contectMethod" [value]="method.id" />
+      {{ method.name }}
+    </label>
   </div>
   <p>
     {{ f.value | json }}
