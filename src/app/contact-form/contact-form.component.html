@@ -51,6 +51,20 @@
       list.
     </label>
   </div>
+  <div class="form-group">
+    <label for="contactMethod">Contact Method</label
+    ><select
+      multiple
+      ngModel
+      name="contactMethod"
+      id="contactMethod"
+      class="form-control form-select"
+    >
+      <option *ngFor="let method of contactMethods" [value]="method.id">
+        {{ method.name }}
+      </option>
+    </select>
+  </div>
   <p>
     {{ f.value | json }}
   </p>
