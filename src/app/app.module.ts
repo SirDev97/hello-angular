@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component';
@@ -35,7 +35,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     ContactFormComponent,
     NewCourseFormComponent,
   ],
-  imports: [BrowserModule, FormsModule, FontAwesomeModule],
+  imports: [BrowserModule, FormsModule, FontAwesomeModule, ReactiveFormsModule],
   providers: [CoursesService, AuthorsService],
   bootstrap: [AppComponent],
 })
