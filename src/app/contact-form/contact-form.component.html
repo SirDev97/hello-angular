@@ -2,6 +2,7 @@
   <div class="form-group">
     <label for="firstName">First Name</label>
     <input
+      required
       ngModel
       name="firstName"
       #firstName="ngModel"
@@ -10,6 +11,12 @@
       type="text"
       class="form-control"
     />
+    <div
+      class="aler alert-danger form-control"
+      *ngIf="firstName.touched && !firstName.valid"
+    >
+      First Name is required.
+    </div>
   </div>
   <div class="form-group">
     <label for="comment">Comment</label
