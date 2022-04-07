@@ -37,4 +37,13 @@ export class PostsComponent {
       });
     // this.http.put<Post>(this.url, JSON.stringify(post))
   }
+
+  deletePost(post: any) {
+    this.http.delete(this.url + '/' + post.id).subscribe(() => {
+      let index = this.posts?.indexOf(post);
+
+      // this.posts?.splice(index, 1);
+      console.log('Deleted: ', post.id);
+    });
+  }
 }
