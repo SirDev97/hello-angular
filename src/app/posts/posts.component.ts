@@ -9,12 +9,23 @@ import { Post } from './Post';
 })
 export class PostsComponent {
   posts?: any[];
+  private url = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(http: HttpClient) {
-    http
-      .get<Post[]>('https://jsonplaceholder.typicode.com/posts')
+  constructor(private http: HttpClient) {
+    http.get<Post[]>(this.url).subscribe((response) => {
+      this.posts = response;
+    });
+  }
+
+  createPost(input: HTMLInputElement) {
+    let post: any = { title: input.value };
+    input.value = '';
+
+    this.http
+      .post<Post>(this.url, JSON.stringify(post))
       .subscribe((response) => {
-        this.posts = response;
+        post.id = response.id;
+        this.posts?.splice(0, 0, post);
       });
   }
 }
