@@ -28,4 +28,13 @@ export class PostsComponent {
         this.posts?.splice(0, 0, post);
       });
   }
+
+  updatePost(post: any) {
+    this.http
+      .patch<Post>(this.url + '/' + post.id, JSON.stringify({ isRed: true }))
+      .subscribe((res) => {
+        console.log(res);
+      });
+    // this.http.put<Post>(this.url, JSON.stringify(post))
+  }
 }
