@@ -1,4 +1,4 @@
-import { HttpResponse } from '@angular/common/http';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { throwError } from 'rxjs';
 import { PostService } from '../services/post.service';
@@ -35,9 +35,15 @@ export class PostsComponent implements OnInit {
   }
 
   deletePost(postId: number) {
-    this.service.deletePost((postId = 500)).subscribe(() => {
-      let index = this.posts?.indexOf(postId);
-      this.posts?.splice(index, 1);
+    this.service.deletePost((postId = 500)).subscribe({
+      next: () => {
+        let index = this.posts?.indexOf(postId);
+        this.posts?.splice(index, 1);
+      },
+
+      error: (err: HttpErrorResponse) => {
+        if (err.status === 404) alert('This post has already been deleted.');
+      },
     });
   }
 }
