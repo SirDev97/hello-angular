@@ -1,0 +1,11 @@
+<div *ngFor="let follower of followers" class="card mb-3" style="width: 18rem">
+  <img
+    class=""
+    src="{{ follower.avatar_url }}"
+    alt="Generic placeholder image"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ follower.login }}</h5>
+    <a href="follower.html_url" class="card-link">{{ follower.html_url }}</a>
+  </div>
+</div>
