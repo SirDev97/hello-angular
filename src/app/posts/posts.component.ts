@@ -1,4 +1,6 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { throwError } from 'rxjs';
 import { PostService } from '../services/post.service';
 import { Post } from './Post';
 
@@ -32,9 +34,9 @@ export class PostsComponent implements OnInit {
     });
   }
 
-  deletePost(post: any) {
-    this.service.deletePost(post).subscribe(() => {
-      let index = this.posts?.indexOf(post);
+  deletePost(postId: number) {
+    this.service.deletePost((postId = 500)).subscribe(() => {
+      let index = this.posts?.indexOf(postId);
       this.posts?.splice(index, 1);
     });
   }
