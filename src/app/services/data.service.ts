@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -25,24 +25,32 @@ export class DataService {
   }
 
   getAll() {
-    return this.http.get(this.url).pipe(catchError(this.handleError));
+    return this.http.get(this.url).pipe(
+      map((response) => response),
+      catchError(this.handleError)
+    );
   }
 
   create(resource: any): Observable<any> {
-    return this.http
-      .post(this.url, JSON.stringify(resource))
-      .pipe(catchError(this.handleError));
+    return this.http.post(this.url, JSON.stringify(resource)).pipe(
+      map((response) => response),
+      catchError(this.handleError)
+    );
   }
 
   update(resource: any): Observable<any> {
     return this.http
       .put(this.url + '/' + resource.id, JSON.stringify({ isRed: true }))
-      .pipe(catchError(this.handleError));
+      .pipe(
+        map((response) => response),
+        catchError(this.handleError)
+      );
   }
 
   delete(id: number): Observable<unknown> {
-    return this.http
-      .delete(this.url + '/' + id)
-      .pipe(catchError(this.handleError));
+    return this.http.delete(this.url + '/' + id).pipe(
+      map((response) => response),
+      catchError(this.handleError)
+    );
   }
 }
