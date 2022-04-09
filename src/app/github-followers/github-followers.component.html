@@ -4,8 +4,10 @@
     src="{{ follower.avatar_url }}"
     alt="Generic placeholder image"
   />
-  <div class="card-body">
-    <h5 class="card-title">{{ follower.login }}</h5>
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title" [routerLink]="['/followers', follower.id]">
+      {{ follower.login }}
+    </h5>
     <a href="follower.html_url" class="card-link">{{ follower.html_url }}</a>
   </div>
 </div>
