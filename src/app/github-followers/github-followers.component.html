@@ -5,7 +5,10 @@
     alt="Generic placeholder image"
   />
   <div class="card-body d-flex flex-column">
-    <h5 class="card-title" [routerLink]="['/followers', follower.id]">
+    <h5
+      class="card-title"
+      [routerLink]="['/followers', follower.id, follower.login]"
+    >
       {{ follower.login }}
     </h5>
     <a href="follower.html_url" class="card-link">{{ follower.html_url }}</a>
